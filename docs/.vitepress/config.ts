@@ -1,29 +1,30 @@
 import { defineConfig } from 'vitepress'
+import { generateSidebar } from 'vitepress-sidebar'
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
-  base: '/Test--v2.0/',
-  title: "My Awesome Project",
-  description: "A VitePress Site",
+  base: '/CSDIY-Document-organization/',
+  title: "WUSTACM--CSdiy文档",
+  description: "WUSTACM 计算机自学指南",
+  
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
+    // 1. 顶部导航 (极少变动，手动保留大类即可)
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: '首页', link: '/' },
+      // { text: '计算机基础', link: '/cs-basics/' },
+      // { text: '算法与数据结构', link: '/algorithm/' }
     ],
 
-    sidebar: [
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      }
-    ],
+    // 2. 侧边栏 (彻底自动化：动态扫描物理文件夹)
+    sidebar: generateSidebar({
+      documentRootPath: 'docs',       // 扫描的物理根目录
+      useTitleFromFrontmatter: true,  // 核心：直接从 Markdown 内部提取标题
+      useFolderTitleFromIndexFile: true, // 使用目录下的 index.md 作为文件夹展示名称
+      collapsed: false,               // 默认展开侧边栏
+      sortMenusByFrontmatterOrder: true // 支持自定义排序
+    }),
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/WUSTACM/CSDIY-Document-organization' }
     ]
   }
 })
