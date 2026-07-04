@@ -37,7 +37,7 @@ order: 10
 
 ```YAML
 ---
-title: # 数据库系统原理（模块显示名称，#是用来加粗的，必须要加入）
+title: 数据库系统原理（将显示在侧边栏）
 order: 40
 ---
 这里是数据库模块的引导页。
@@ -62,14 +62,13 @@ order: 40
 
 ### Step 2: 克隆与分支隔离
 
-将您的个人派生仓库克隆到本地，并基于主干创建一个功能分支：
+将您的个人派生仓库克隆到本地：
 
 Bash
 
 ```
 git clone [https://github.com/您的用户名/CSDIY-Document-organization.git](https://github.com/您的用户名/CSDIY-Document-organization.git)
 cd CSDIY-Document-organization
-git checkout -b feature/add-new-article
 ```
 
 ### Step 3: 本地创作与实时预览
@@ -92,7 +91,7 @@ Bash
 ```
 git add .
 git commit -m "docs: 新增 XXX 知识点解析"
-git push origin feature/add-new-article
+git push origin main
 ```
 
 ### Step 5: 发起拉取请求 (Pull Request)
