@@ -3,8 +3,8 @@ import { generateSidebar } from 'vitepress-sidebar'
 
 export default defineConfig({
   base: '/',
-  title: "WUSTACM--CSDIY文档",
-  description: "WUSTACM 计算机自学指南",
+  title: "WUST--CSDIY文档",
+  description: "WUST 计算机自学指南",
   
   themeConfig: {
     // 1. 顶部导航 (极少变动，手动保留大类即可)

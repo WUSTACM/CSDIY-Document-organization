@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "WUSTACM"
+  name: "WUST"
   text: "CSDIY文档"
   tagline: 学习，生活，诗与远方
   actions:
