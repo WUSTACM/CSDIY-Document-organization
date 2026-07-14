@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 import { generateSidebar } from 'vitepress-sidebar'
 
 export default defineConfig({
-  base: '/',
+  base: '/CSDIY-Document-organization',
   title: "WUST--CSDIY文档",
   description: "WUST 计算机自学指南",
   
