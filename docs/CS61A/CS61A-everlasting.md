@@ -1,6 +1,6 @@
 ---
-title: CS61A 课程介绍与学习建议
-order: 1
+title: CS61A by Everlasting
+order: 2
 ---
 
 **在此感谢本文主要笔者 25级ACM俱乐部成员 everlasting**
