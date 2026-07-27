@@ -7,7 +7,12 @@
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
   },
+  "dependencies": {
+    "three": "^0.185.1",
+    "three-html-render": "^0.1.2"
+  },
   "devDependencies": {
+    "@types/three": "^0.185.0",
     "vitepress": "^1.0.0",
     "vitepress-sidebar": "^1.36.1"
   }
