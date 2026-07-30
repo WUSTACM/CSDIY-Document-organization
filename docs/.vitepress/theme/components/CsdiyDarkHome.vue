@@ -752,7 +752,7 @@ function setupScene(
           <section class="csdiy-page-copy" aria-labelledby="csdiy-dark-title">
             <p class="csdiy-page-kicker">OPEN SOURCE · SELF-DIRECTED LEARNING</p>
             <h1 id="csdiy-dark-title">在一束光里，<br><span>找到你的 CS 路线。</span></h1>
-            <p class="csdiy-page-subtitle">学习，生活，诗与远方。把零散知识整理成可以真正走下去的路径。</p>
+            <p class="csdiy-page-subtitle">学习，生活，诗与远方。</p>
 
             <div class="csdiy-concepts" data-interactive>
               <div class="csdiy-concept-list" role="list" aria-label="CSDIY 核心内容">
