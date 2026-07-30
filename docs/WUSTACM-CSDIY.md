@@ -2,7 +2,10 @@
 title: WUSTACM CSDIY组路线（开发组）
 order: 1
 ---
+
 **在此感谢本文主要笔者 24ACM俱乐部成员 shoper**
+
+# WUSTACM CSDIY组路线（开发组）
 
 **本组面向所有年级招新**
 
