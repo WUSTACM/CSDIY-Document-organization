@@ -44,6 +44,9 @@ order: 1
 
 **如何判断自己是否有基本的代码能力呢**刷`oj`题单，如果你是老生，之前有完成过`oj`的c语言题单，可以直接跳过这步。否则请先完成[WUSTACM招新入门题单](https://blog.wustacm.com/2026/wustacm-newcomer-guide)
 
+### 2.1.1 [力扣灵神题单](https://leetcode.cn/discuss/post/3141566/ru-he-ke-xue-shua-ti-by-endlesscheng-q3yd/)
+作为长期副线，每天坚持写一两题即可（打过算法竞赛的自便
+
 ### 2.2 [翻译插件配置](http://csdiy.wustacm.com/tools/AI-translation.html)
 
 ### 2.3 [CSDIY-CS50](https://csdiy.wiki/%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/C/CS50/)
