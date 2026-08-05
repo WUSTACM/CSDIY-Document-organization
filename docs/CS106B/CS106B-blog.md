@@ -1,5 +1,5 @@
 ---
-title: CS106B环境配置
+title: CS106B 环境配置
 order: 2
 ---
 
