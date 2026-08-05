@@ -1,6 +1,6 @@
 ---
 title: CS106B环境配置
-order: 1
+order: 2
 ---
 
 **在此感谢本文主要笔者 24级ACM俱乐部成员 robin05**
