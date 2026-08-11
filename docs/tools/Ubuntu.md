@@ -42,4 +42,6 @@ csdiy中大部分lab在windows环境是能够完成的，不过在linux系统中
 
 - 日常使用的qq，微信，vscode......这些还是有的
 
-- win的可执行文件后缀是```.exe```，ubuntu是```.deb```
+- win的可执行文件后缀是```.exe```，Linux的可执行文件一般没有后缀
+
+- 可以尝试使用apt仓库下载安装、管理软件，会比Windows方便的多，apt软件包后缀是deb
