@@ -83,7 +83,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 343.15221405029297
   },
   "right": {
     "id": "c959d20c5e53b716",
@@ -189,9 +189,10 @@
   },
   "active": "666d28bc8032c7d3",
   "lastOpenFiles": [
-    "docs/assets/Pasted image 20260819174508.png",
-    "docs/assets/Pasted image 20260819173825.png",
+    "docs/CS106B/CS106B-blog.md",
     "docs/CS106B/CS106B 启动指南.md",
+    "docs/assets/27.png",
+    "docs/assets/26.png",
     "docs/CS106L/CS106L-assignment-chinese.md",
     "node_modules/tabbable/README.md",
     "未命名.base"
