@@ -53,7 +53,7 @@ order: 1
 
 填写大致如下：
 
-<img src="./CS61B-pterocaryz-01.png" width="50%"></img>
+<img src="./CS61B-pterocaryz-01.png" width="70%"></img>
 
 
 ### 作业提交
@@ -87,4 +87,4 @@ order: 1
 - [🔗docs.everlasting.xin](https://docs.everlasting.xin/CS61B/2021Spring/)
 
 课程代码框架
-- [🔗Berkeley-CS61B/skeleton-sp21]https://github.com/Berkeley-CS61B/skeleton-sp21
+- [🔗Berkeley-CS61B/skeleton-sp21](https://github.com/Berkeley-CS61B/skeleton-sp21)
