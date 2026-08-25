@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/CS106B/CS106B 启动指南.md",
+                "file": "docs/CS61B/CS61B-pterocaryz.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CS106B 启动指南"
+              "title": "CS61B-pterocaryz"
             }
           }
         ]
@@ -83,7 +83,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 343.15221405029297
+    "width": 232.04035568237305
   },
   "right": {
     "id": "c959d20c5e53b716",
@@ -99,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/CS106B/CS106B 启动指南.md",
+                "file": "docs/CS61B/CS61B-pterocaryz.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -174,7 +174,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -189,8 +190,13 @@
   },
   "active": "666d28bc8032c7d3",
   "lastOpenFiles": [
-    "docs/CS106B/CS106B-blog.md",
+    "docs/CS61B/CS61B-everlasting.md",
+    "docs/CS61B/CS61B-pterocaryz.md",
     "docs/CS106B/CS106B 启动指南.md",
+    "docs/assets/CS61B-pterocaryz-01.png",
+    "docs/assets/截图 2026-08-25 13-13-11.png",
+    "README.md",
+    "docs/CS106B/CS106B-blog.md",
     "docs/assets/27.png",
     "docs/assets/26.png",
     "docs/CS106L/CS106L-assignment-chinese.md",
