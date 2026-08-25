@@ -15,7 +15,7 @@
               "state": {
                 "file": "docs/CS61B/CS61B-pterocaryz.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "CS61B-pterocaryz"

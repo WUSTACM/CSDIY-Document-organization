@@ -13,7 +13,7 @@ order: 1
 
 
 
-### 课程资源与亮点
+## 课程资源与亮点
 
 这门课与 CS61A 风格类似，拥有极为完善的配套资源：
 
@@ -23,7 +23,7 @@ order: 1
 
 
 
-### 推荐版本与 Gradescope 评测配置
+## 推荐版本与 Gradescope 评测配置
 
 推荐学习 **2021 年春季版本**。该版本不仅资料完全公开，还支持配置官方评测。
 
@@ -34,48 +34,35 @@ order: 1
 > 该网站注册时坑点较多，务必按照下面步骤操作
 
 
-#### 注册流程
+### 注册流程
 
-<details open>
-  <summary style="cursor: pointer; font-weight: bold; margin-bottom: 10px;">点击收起/展开</summary>
+1. 访问 [🔗gradescope.com](https://www.gradescope.com/)，选择作为学生（Student）注册。
 
-  <ol>
-    <li>
-      访问 <a href="https://www.gradescope.com/" target="_blank">🔗gradescope.com</a>，选择作为学生（Student）注册。
-    </li>
-    <br>
-    <li>
-      <b>填写信息</b>：
-      <ul style="margin-top: 8px;">
-        <li><b>Course Entry Code</b> 栏：<code>MB7ZPY</code></li>
-        <li><b>School</b> 栏：填写并在下拉框选择 <code>UC Berkeley</code> <s>（别填其他学校，找不到的）</s></li>
-      </ul>
+2. **填写信息**：
 
-      <blockquote style="margin: 10px 0; padding: 10px 15px; border-left: 4px solid #8b5cf6; background: rgba(139, 92, 246, 0.08);">
-        <b>💜 Important</b><br>
-        填写 <code>UC Berkeley</code> 后可能需要一点时间下拉框才会显示该选项。<br>
-        <b>不要选择立刻出现的 <code>2U - UC Berkeley</code></b>
-      </blockquote>
+   - **Course Entry Code** 栏：`MB7ZPY`
+   - **School** 栏：填写并在下拉框选择 `UC Berkeley` <s>（别填其他学校，找不到的）</s>
 
-      <ul>
-        <li>后面的 <i>姓名</i> (<b>Name</b>) 和 <i>邮箱</i> (<b>Email Address</b>) 两栏填写后即可注册</li>
-      </ul>
-    </li>
-  </ol>
+   > [!important]
+   >
+   > 填写 `UC Berkeley` 后可能需要一点时间下拉框才会显示该选项
+   >
+   > **不要选择立刻出现的 `2U - UC Berkeley`**
 
-  <p>填写大致如下：</p>
-  <img src="CS61B-pterocaryz-01.png" width="50%" />
+   - 后面的 *姓名* (**Name**) 和 *邮箱* (**Email Address**) 两栏填写后即可注册
 
-</details>
+填写大致如下：
+
+<img src="./CS61B-pterocaryz-01.png" width="50%"></img>
 
 
-#### 作业提交
+### 作业提交
 
 完成注册后，即可在线评测作业。支持直接打包 `.zip` 上传，或关联自己的 GitHub 仓库提交。
 
 
 
-### 语言门槛与核心项目
+## 语言门槛与核心项目
 
 - **零基础过渡 Java**：作业基于 Java，但无需担心语言门槛。课程前几周会从面向对象（OOP）讲起，循序渐进带你掌握 Java。只要有任意一门编程语言基础，上手会非常顺畅。
 - **工程素养培养**：课程早期会详细介绍 IntelliJ IDEA 的工程化使用、单元测试（Unit Testing）等实用开发技能。
@@ -91,7 +78,7 @@ order: 1
 
 
 
-### 了解更多
+## 了解更多
 
 更多课程细节与学习指南可参考 CSDIY 页面：
 - [🔗CS61B: Data Structures and Algorithms](https://csdiy.wiki/数据结构与算法/CS61B/?h=cs61b)
