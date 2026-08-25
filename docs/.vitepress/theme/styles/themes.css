@@ -1,0 +1,115 @@
+/* ==================== 1. Dracula ==================== */
+[data-theme="dracula"] {
+  --vp-c-brand-1: #bd93f9;
+  --vp-c-brand-2: #a77be8;
+  --vp-c-brand-3: #9264d8;
+  --vp-c-brand-soft: rgba(189, 147, 249, 0.16);
+  --vp-c-bg: #282a36;
+  --vp-c-bg-alt: #21222c;
+  --vp-c-bg-elv: #191a21;
+  --vp-c-text-1: #f8f8f2;
+  --vp-c-text-2: #bfbfd0;
+  --vp-c-text-3: #6272a4;
+  --vp-c-border: #44475a;
+  --vp-c-gutter: #21222c;
+}
+html:not(.dark)[data-theme="dracula"] {
+  --vp-c-brand-1: #7b42bc;
+  --vp-c-brand-2: #6731a5;
+  --vp-c-brand-3: #56238f;
+  --vp-c-brand-soft: rgba(123, 66, 188, 0.14);
+  --vp-c-bg: #f8f8f2;
+  --vp-c-bg-alt: #ececf1;
+  --vp-c-bg-elv: #ffffff;
+  --vp-c-text-1: #282a36;
+  --vp-c-text-2: #44475a;
+  --vp-c-text-3: #6272a4;
+  --vp-c-border: #d5d5de;
+}
+
+/* ==================== 2. Tokyo Night ==================== */
+[data-theme="tokyo-night"] {
+  --vp-c-brand-1: #7aa2f7;
+  --vp-c-brand-2: #6691ed;
+  --vp-c-brand-3: #537fe0;
+  --vp-c-brand-soft: rgba(122, 162, 247, 0.16);
+  --vp-c-bg: #1a1b26;
+  --vp-c-bg-alt: #16161e;
+  --vp-c-bg-elv: #13141c;
+  --vp-c-text-1: #c0caf5;
+  --vp-c-text-2: #9aa5ce;
+  --vp-c-text-3: #565f89;
+  --vp-c-border: #292e42;
+  --vp-c-gutter: #16161e;
+}
+html:not(.dark)[data-theme="tokyo-night"] {
+  --vp-c-brand-1: #34548a;
+  --vp-c-brand-2: #284474;
+  --vp-c-brand-3: #1d345f;
+  --vp-c-brand-soft: rgba(52, 84, 138, 0.14);
+  --vp-c-bg: #e1e2e7;
+  --vp-c-bg-alt: #d5d6db;
+  --vp-c-bg-elv: #f2f3f7;
+  --vp-c-text-1: #343b58;
+  --vp-c-text-2: #565f89;
+  --vp-c-text-3: #8990b3;
+  --vp-c-border: #b4b5b9;
+}
+
+/* ==================== 3. Catppuccin ==================== */
+[data-theme="catppuccin"] {
+  --vp-c-brand-1: #cba6f7;
+  --vp-c-brand-2: #b88ff0;
+  --vp-c-brand-3: #a476e7;
+  --vp-c-brand-soft: rgba(203, 166, 247, 0.16);
+  --vp-c-bg: #1e1e2e;
+  --vp-c-bg-alt: #181825;
+  --vp-c-bg-elv: #11111b;
+  --vp-c-text-1: #cdd6f4;
+  --vp-c-text-2: #bac2de;
+  --vp-c-text-3: #a6adc8;
+  --vp-c-border: #313244;
+  --vp-c-gutter: #181825;
+}
+html:not(.dark)[data-theme="catppuccin"] {
+  --vp-c-brand-1: #8839ef;
+  --vp-c-brand-2: #7626de;
+  --vp-c-brand-3: #6517cb;
+  --vp-c-brand-soft: rgba(136, 57, 239, 0.14);
+  --vp-c-bg: #eff1f5;
+  --vp-c-bg-alt: #e6e9ef;
+  --vp-c-bg-elv: #ffffff;
+  --vp-c-text-1: #4c4f69;
+  --vp-c-text-2: #5c5f77;
+  --vp-c-text-3: #6c6f85;
+  --vp-c-border: #ccd0da;
+}
+
+/* ==================== 4. Nord ==================== */
+[data-theme="nord"] {
+  --vp-c-brand-1: #88c0d0;
+  --vp-c-brand-2: #78b1c2;
+  --vp-c-brand-3: #67a1b3;
+  --vp-c-brand-soft: rgba(136, 192, 208, 0.16);
+  --vp-c-bg: #2e3440;
+  --vp-c-bg-alt: #242933;
+  --vp-c-bg-elv: #1c2028;
+  --vp-c-text-1: #eceff4;
+  --vp-c-text-2: #e5e9f0;
+  --vp-c-text-3: #d8dee9;
+  --vp-c-border: #434c5e;
+  --vp-c-gutter: #242933;
+}
+html:not(.dark)[data-theme="nord"] {
+  --vp-c-brand-1: #5e81ac;
+  --vp-c-brand-2: #4c6f9a;
+  --vp-c-brand-3: #3b5d88;
+  --vp-c-brand-soft: rgba(94, 129, 172, 0.14);
+  --vp-c-bg: #eceff4;
+  --vp-c-bg-alt: #e5e9f0;
+  --vp-c-bg-elv: #ffffff;
+  --vp-c-text-1: #2e3440;
+  --vp-c-text-2: #3b4252;
+  --vp-c-text-3: #4c566a;
+  --vp-c-border: #d8dee9;
+}
