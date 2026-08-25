@@ -123,28 +123,22 @@ onUnmounted(() => {
   </div>
 </template>
 
+/* Layout.vue */
 <style>
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation: none;
-  mix-blend-mode: normal;
-}
+/* ...保留你原有的其他样式... */
 
-::view-transition-old(root),
-.dark::view-transition-new(root) {
-  z-index: 1;
+/* 核心：利用 flex order 强制重新排列导航栏右侧组件 */
+.VPNavBarAppearance {
+  order: 1 !important; /* 第一位：亮暗切换 */
 }
-
-::view-transition-new(root),
-.dark::view-transition-old(root) {
-  z-index: 9999;
+.theme-picker-wrapper {
+  order: 2 !important; /* 第二位：主题选择框 */
+  margin-left: 10px !important;
 }
-
-.VPSwitchAppearance {
-  width: 22px !important;
+.VPNavBarSocialLinks {
+  order: 3 !important; /* 第三位：GitHub 等社交链接 */
 }
-
-.VPSwitchAppearance .check {
-  transform: none !important;
+.VPNavBarFlyout.extra {
+  order: 4 !important; /* 第四位：移动端多出的菜单项 */
 }
 </style>
