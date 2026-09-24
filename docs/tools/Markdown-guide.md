@@ -18,6 +18,15 @@ order: 5
 
 ---
 
+## 创建
+
+.md 文件创建非常简单,直接右键创建 .txt 文件然后改后缀为 .md 你的 .md 文件就创建好了,如果你想看渲染效果,可以访问我网站的 [md预览器](https://blog.songline-blog.com/tools/markdown-previewer/)
+
+也可以在 vscode 直接查看
+![md预览](../assets/31.png)
+
+---
+
 ## 标题
 
 ```
