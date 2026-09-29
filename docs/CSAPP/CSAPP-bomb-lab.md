@@ -22,9 +22,9 @@ order: 3
 
 ## 机翻内容
 
----
+<details>
 
-开头剧情的翻译
+<summary>开头剧情的翻译</summary>
 
 ```txt
 邪恶博士的阴险炸弹，版本 1.1
@@ -121,9 +121,9 @@ phase_defused();           /* 糟糕！他们居然破解了！
 > 哇，他们居然成功了！但好像还有什么东西……不见了？也许他们忽略了什么？哈哈哈哈！
 > 这可能说明除了 6 个阶段其实还有个~~隐藏阶段~~
 
-## 解题思路
+</details>
 
----
+## 解题思路
 
 由上面翻译可知我们需要解决 6(~~7~~) 个阶段的炸弹才能摆脱邪恶博士的威胁而真正的 key 则是藏在已经汇编好的程序当中
 
@@ -558,11 +558,221 @@ b = eax = 207
 
 <summary>phase_4 点开查看</summary>
 
-施工中
+渐入佳境,我们紧接着来看 phase_4 吧
+
+![phase_4](../assets/csapp-phase_4.png)
+
+> 我们不妨约定俗成 a = *(rsp + 8), b = *(rsp + 12)
+
+在正式分析前,我们先认识下几个新的汇编命令
+
+```txt
+jbe 条件判断(jump if below or equal) 即 <=,无符号数
+jle 条件判断(jump if less or equal) 即 <=,有符号数
+jge 条件判断(jump if greater or equal) 即 >=
+shr 位运算(shift right logic) 逻辑右移(右移时不对符号进行保留)
+sar 位运算(shift right Arithmetic) 算术右移(右移时保留数的符号,比如: 最高bit位为 1 在右移后仍然保证为 1 不会自动填充为 0)
+```
+
+ok 咱们正式开始
+
+```txt
+1. 先申请 24 byte 空间
+2. 调用 sscanf 函数, rcx = *(rsp + 12), rdx = *(rsp + 8)
+3. 判断 eax != 2 # 这里用来检查 sscanf 的返回值, eax 返回为 2 说明 sscanf 读取了两个变量
+4. 未生效
+5. 判断 *(rsp + 8) <= 14 # 说明 a <= 14
+6. 生效跳转 0x40103a
+7. 赋值 edx = 14, esi = 0, edi = *(rsp + 8) # edi = a
+8. 调用 func4(esi, edx, edi);
+9. 测试 test(eax & eax)
+10. 判断 test(eax & eax) 为 jne(jump if not equal)
+11. 未生效 # 说明 eax = 0
+12. 判断 *(rsp + 12) == 0 # 此处我们可以直接得到 b = 0
+13. 生效跳转 0x40105d
+14. 恢复空间
+15. 程序结束
+```
+
+> 注意 eax 默认为各个函数返回的`整数`值所以,你可以发现在上面很多函数调用指令后紧跟着检测以及检查 eax 的数值
+
+对于 test(%eax, %eax) 段落说明
+
+<details>
+
+<summary>点击打开查看</summary>
+
+我们知道 test 底层实际是按位取与 &
+
+```txt
+test %a, %b = b & a
+```
+
+而后面紧跟着的条件判断 jne 则是对 test 结果的回应
+
+我们知道每个条件判断以及 test 指令都会修改标志位的数值
+
+<details>
+
+<summary>点击打开看标志位详情</summary>
+
+我们知道条件判断以及 test 命令会修改 cpu 上的标志位,而常见的标志位如下:
+
+缩写|全称|含义|什么时候置为 1|
+:---:|:---:|:---:|:---:|
+ZF|Zero Flag 零标志|运算结果是否为0|结果=0 -> ZF = 1,结果!=0 -> ZF = 0|
+SF|Sing Flag 符号标志|有符号数正负|结果最高位 bit=1(负数)-> SF = 1, 正数则为 SF = 0|
+CF|Carry Flag 进位标志|无符号数溢出/减法借位|最高位进位 -> CF = 1, 减法需要借位时 -> CF = 1|
+OF|Overflow Flag 溢出标志|有符号整数溢出|有符号运算超出表示范围则 -> OF = 1|
+PF|Parity Flag 奇偶标志|结果最低8位里1的个数|低 8 位中 1 的数量是偶数 -> PF = 1|
+
+</details>
+
+</details>
+
+而这里对两个相同数按位取与(&)显然只有两个结果
+
+```txt
+eax = 0 -> 结果为 0
+eax != 0 -> 结果不为 0
+```
+
+这里 jne 会读取 ZF 标志,只有当标志为 0(运算结果为 0)时 jne 才会跳转
+
+此处判断未生效说明 ZF 标志存放结果为 1,即按位与计算结果为 0
+
+这说明 func4 的返回值为 0
+
+但是 func4 在什么情况下才会返回零呢?
+> 依照上面的分析我们已经知道 b = 0,那么对于这题我们只缺 a 的值了,整篇中没有关于 a 的变化指令,除了 a 作为 func4 一个参数这一个线索,所以我们下一步就是了解 func4 究竟是什么
+
+随机我们马上对 func4 进行反汇编
+```gdb
+disassemble func4
+```
+
+可以得到如下内容:
+![phase_4-func4](../assets/csapp-phase_4-func4.png)
+
+```txt
+# 函数传入值 (esi = 0, edx = 14, edi = a)
+1. 借 8 byte
+2. eax = edx
+3. eax -= esi # 此时 eax = (edx - esi)
+4. ecx = eax
+5. ecx 逻辑右移 31 位 # 获得 eax 的数字符号
+6. eax += ecx # 此时 eax = (edx - esi) + ecx
+7. eax 算术右移 1 位 # 即 eax = eax / 2
+8. ecx = rax + rsi * 1 # ecx = eax + esi
+```
+
+> 第八步的 rax = eax, rsi = esi 的知识涉及寄存器高低位的工作原理,详情可以打开下按键了解
+<details>
+
+<summary>点击打开</summary>
+
+部分寄存器是有不同位数适配的,比如
+
+rax(64bit) -> eax(32bit) -> ax(16bit) -> al(8bit)
+
+而低位的寄存器被修改后会自动覆盖高位寄存器
+
+比如 rax = 0x1111111000000000,eax = 0x00114514 -> rax = 0x0000000000114514
+
+对应各个寄存器关系如下表:
+
+|64|32|16|8|
+|:---:|:---:|:---:|:---:|
+|rax|eax|ax|al|
+|rbx|ebx|bx|bl|
+|rcx|ecx|cx|cl|
+|rdx|edx|dx|dl|
+|rsi|esi|si|sil|
+|rdi|edi|di|dil|
+|rbp|ebp|bp|bpl|
+|rsp|esp|sp|spl|
+|r8|r8d|r8w|r8b|
+|r9|r9d|r9w|r9b|
+|...|...|...|...|
+|r15|r15d|r15w|r15b|
+
+所以此处
+```txt
+ecx = rax + rsi * 1
+```
+其实是高位rax,rsi 继承了 eax,esi 的数值  
+也就是:
+```txt
+ecx = eax + esi * 1
+```
+
+希望有帮助
+
+</details>
+
+现在我们可以发现 ecx = (edx - esi + ecx) / 2 + esi
+
+各位不觉得这个计算方程很熟悉吗?  
+我们不妨换个展现方式
+```txt
+mid = (high - low + 1) / 2 + low
+```
+
+没错这个就是二分查找的关键部分,我们不妨猜想这个 func4 就是二分查找函数
+
+为了验证我们的猜想我们接着看下面的命令:
+```txt
+9. 判断 ecx <= edi
+10. 
+case1 未生效(ecx > edi)
+{
+  edx = (rcx - 1) # 让右边界 high = mid - 1
+  调用 fun4(esi,edx,edi)
+  eax += eax # 理解为返回值 * 2
+  函数返回
+}
+case2 生效(ecx <= edi)
+{
+  跳转 0x400ff2
+  eax = 0
+  判断 ecx >= edi
+  case 01 生效(ecx >= edi)
+  {
+      函数返回 # 带着先前已经赋值的 eax = 0 返回
+  }
+  case 02 未生效(ecx < edi)
+  {
+      esi = (rcx + 1) # 相当于左边界增加 low = mid + 1
+      调 func4(esi, edx, edi)
+      eax = (rax + rax * 1) + 1 理解为返回值 * 2 + 1
+      函数返回
+  }
+}
+```
+
+我们可以发现这是个标准的二分查找模板,但是与标准不同的是返回值  
+可以看到返回值不是 0 / 1 的 bool 值而是 *2 / *2+1 的二进制存储值,可以理解为此处是出题人想让结果记忆每一个子二分查找时的过程  
+如果是 向下查找则 eax *= 2, 向上查找则 eax = eax * 2 + 1,而刚好找到则 eax = 0
+
+所以可能会出现 eax = (二进制)100110001100 这种情况,其中的 1 / 0 能让我们很直接知晓寻找过程
+
+> 其中有个很有意思的一点,在 case2 处先对 eax = 0,是为什么?  
+> 我们进入 case2 会认为 ecx >= edi,最理想情况是 ecx == edi,所以我们先默认返回结果为 0 为理想情况  
+
+ok 我们再回到 phase_4 函数
+
+我们已经分析得出最后 eax = 0 而让 eax = 0 只有一种情况那就是最理想情况 a = (high + low) / 2 我们已经知道调 func4 时的两个边界值 0, 14  
+自然 a = 7  
+
+所以 phase_4 的输入值应该是 7 0
+
+至此,恭喜你已经通过了 phase_4 的考验!
 
 </details>
 
 ---
+
+这里我们学习了函数中调用函数的知识,同时也融合了前 3 个 phase 的内容,是不是感觉~~~长脑子了~~~
 
 <details>
 
