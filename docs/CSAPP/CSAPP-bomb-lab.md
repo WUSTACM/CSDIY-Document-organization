@@ -210,6 +210,9 @@ lea    加载有效地址(Load Effective Address),参与地址计算
 想不明白可以看下我的思路
 
 #### phase_1
+
+---
+
 <details>
   <summary>phase_1 点开查看</summary>
 
@@ -261,8 +264,6 @@ x/s 0x402400
 
 </details>
 
----
-
 phase_1 完成后你可以把 1 阶段的答案放进 answer.txt 内这样下次只需要用参数形式用该文件启动 bomb 就可以直接到第二阶段啦
 
 在 gdb 里像这样运行即可
@@ -281,6 +282,9 @@ run answer.txt
 > 下面的几个阶段同理
 
 #### phase_2
+
+---
+
 <details>
   <summary>phase_2 点击打开</summary>
 
@@ -341,11 +345,12 @@ run answer.txt
 
 </details>
 
----
-
 从这开始你就发现开始上难度了,可能不光是线性的理解,他会有循环的理解
 
 #### phase_3
+
+---
+
 <details>
 
 <summary>phase_3 点开查看</summary>
@@ -550,14 +555,15 @@ b = eax = 207
 
 </details>
 
----
-
 这里你就掌握了循环以及条件判断语句在反汇编里的样子了,既然你掌握了基本的东西,你应该懂的吧(awa),大杂烩要来了
 
 > phase_3 这里卡了我 3 个小时,好吧我知道慢了点,但是解出答案还是很爽的对吧!  
 > ps: 16 进制转换我~~算错~~了好几次
 
 #### phase_4
+
+---
+
 <details>
 
 <summary>phase_4 点开查看</summary>
@@ -774,11 +780,12 @@ ok 我们再回到 phase_4 函数
 
 </details>
 
----
-
 这里我们学习了函数中调用函数的知识,同时也融合了前 3 个 phase 的内容,是不是感觉~~~长脑子了~~~
 
 #### phase_5
+
+---
+
 <details>
 
 <summary>phase_5 点开查看</summary>
@@ -915,10 +922,12 @@ Y/.u6W
 
 </details>
 
----
-
 这里是不是感觉就像~~~黑客一样~~~,让你破解类似凯撒密码的感觉  
 好了好了,也快到终点了,加把劲我们继续吧!
+
+#### phase_6
+
+---
 
 <details>
 
@@ -928,9 +937,9 @@ Y/.u6W
 
 </details>
 
----
-
 ### 彩蛋
+
+---
 
 当你按下 Control + C(即停止程序) 后,你会发现有如下彩蛋,还是很有意思哈
 
