@@ -3,7 +3,7 @@ title: Markdown 食用指南
 order: 5
 ---
 
-**在此感谢本文主要笔者 25级ACM俱乐部成员 Chord**
+**在此感谢本文主要笔者 25级开发组成员 Chord**
 
 # Markdown 的食用指南
 

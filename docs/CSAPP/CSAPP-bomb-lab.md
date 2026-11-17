@@ -3,7 +3,7 @@ title: CSAPP-bomb lab思路
 order: 3
 ---
 
-**在此感谢本文主要笔者 25级ACM俱乐部成员 Chord**
+**在此感谢本文主要笔者 25级开发组成员 Chord**
 
 # Bomb lab
 

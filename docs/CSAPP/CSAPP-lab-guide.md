@@ -3,7 +3,7 @@ title: CSAPP-lab导入
 order: 2
 ---
 
-**在此感谢本文主要笔者 25级ACM俱乐部成员 Chord**
+**在此感谢本文主要笔者 25级开发组成员 Chord**
 
 # 关于本篇
 
@@ -54,7 +54,7 @@ Bomb → Data → Attack → Architecture → Cache → Shell → Malloc → Pro
 
 Data(施工中)
 
-Attack(施工中)
+[Attack 点击跳转](http://csdiy.wustacm.com/CSAPP/CSAPP-attack-lab.html)
 
 Architecture(施工中)
 
